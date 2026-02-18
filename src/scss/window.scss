@@ -1,0 +1,52 @@
+.window {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px #1A1A1A solid;
+    min-height: 300px;
+
+    &__header {
+        position: relative;
+        padding: 10px 15px;
+        background-color: #1A1A1A;
+        height: 40px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .dot-wrapper {
+        display: flex;
+        
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        
+        &--red {
+            background-color: #EF4444;
+        }
+
+        &--yellow {
+            background-color: #EAB308;
+            margin: 0 10px;
+        }
+
+        &--green {
+            background-color: #22C55E;
+        }
+    }
+
+    &__header-name {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__wrapper {
+        padding: 30px 20px;
+    }
+}

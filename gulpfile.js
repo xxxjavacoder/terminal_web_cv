@@ -1,3 +1,4 @@
+
 import gulp from 'gulp';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -18,11 +19,16 @@ const paths = {
   styles: 'src/scss/**/*.scss',
   scripts: 'src/js/**/*.js',
   images: 'src/images/**/*',
+  fonts: 'dist/fonts',
   dist: 'dist'
 };
 
 export function clean() {
-  return deleteAsync([paths.dist]);
+  return deleteAsync([
+    `${paths.dist}/**`,
+    `!${paths.fonts}`,
+    `!${paths.fonts}/**`
+  ]);
 }
 
 export function html() {

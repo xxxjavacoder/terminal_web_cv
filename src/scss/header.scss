@@ -1,0 +1,12 @@
+.header {
+
+    &__last-login {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    &__version {
+        margin-bottom: 20px;
+    }
+}
