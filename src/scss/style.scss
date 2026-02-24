@@ -26,9 +26,23 @@
     box-sizing: border-box;
 }
 
+.ubuntu-mono-regular {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.fs-italic {
+  font-style: italic;
+}
+
+
 body {
     background-color: black;
-    font-family: 'Ubuntu-Mono';
     color: $grey-text;
 }
 
@@ -44,3 +58,6 @@ body {
 @import "window";
 @import "header";
 @import "nav";
+@import "section";
+@import "whoami";
+@import "about";

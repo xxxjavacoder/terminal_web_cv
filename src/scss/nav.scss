@@ -1,3 +1,46 @@
+@import "var";
+
 .nav {
+    display: flex;
+
+    &__title {
+        min-width: 115px;
+        max-width: 115px;
+        width: 115px;
+        margin-right: 20px;
+
+        @media (min-width: 992px) {
+            margin-right: 0;
+        }
+    }
     
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        gap: .5rem;
+
+        @media (min-width: 768px) {
+            gap: 1rem;
+        }
+
+        @media (min-width: 992px) {
+            gap: 1.5rem;
+        }
+    }
+
+    &__list-item {
+        list-style: none;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $green-text;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            color: $pink-text;
+        }
+    }
 }
