@@ -20,6 +20,7 @@ const paths = {
   scripts: 'src/js/**/*.js',
   images: 'src/images/**/*',
   fonts: 'dist/fonts',
+  fav: 'dist/favicon',
   dist: 'dist'
 };
 
@@ -27,7 +28,9 @@ export function clean() {
   return deleteAsync([
     `${paths.dist}/**`,
     `!${paths.fonts}`,
-    `!${paths.fonts}/**`
+    `!${paths.fonts}/**`,
+    `!${paths.fav}`,
+    `!${paths.fav}/**`
   ]);
 }
 

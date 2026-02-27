@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@fontsource/ubuntu-mono": "^5.2.8",
+    "animate.css": "^4.1.1",
     "gulp-cli": "^3.1.0"
   },
   "devDependencies": {

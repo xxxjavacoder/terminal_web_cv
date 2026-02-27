@@ -1,0 +1,21 @@
+@import "var";
+
+.skills {
+
+    &__item {
+        display: block;
+        padding: 5px 10px;
+        margin: 5px;
+        background-color: #2d2d2d;
+        border-radius: 4px;
+        font-size: 14px;
+
+        &:hover {
+            background-color: $green-text-light;
+        }
+
+        @media (min-width: 768px) {
+            display: inline-block;
+        }
+    }
+}
