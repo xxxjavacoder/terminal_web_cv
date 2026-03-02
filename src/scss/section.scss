@@ -3,9 +3,13 @@
 .section {
     margin-top: 50px;
 
+    &:last-child {
+        margin-bottom: 50px;
+    }
+
     &__wrapper {
         padding-left: 20px;
         margin-top: 20px;
-        border-left: 2px solid #1F2937;
+        border-left: 2px solid $grey-border;
     }
 }

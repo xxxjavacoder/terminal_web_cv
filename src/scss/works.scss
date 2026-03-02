@@ -1,3 +1,41 @@
+@import 'var';
+
 .works {
     
+    &__item {
+        
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__item-role {
+        font-size: 18px;
+        color: $grey-text-light;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__item-date {
+        color: $grey-text;
+        font-size: 14px;
+    }
+
+    &__item-company {
+        color: $green-text-light;
+        margin-bottom: 10px;
+    }
+
+    &__item-description {
+        p {
+            color: $grey-text;
+            font-size: 16px;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
 }

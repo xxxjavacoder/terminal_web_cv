@@ -1,0 +1,51 @@
+@import 'var';
+
+.education {
+    
+    &__item {
+        border: $grey-border;
+        border-radius: 4px;
+        padding: 20px;
+        background-color: #111827;
+
+        &:hover {
+            border-color: $green-text-light;
+            transition: border-color 0.3s ease;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__item-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        svg {
+            display: none;
+            margin-right: 10px;
+
+            @media (min-width: 576px) {
+                display: block;
+            }
+        }
+    }
+
+    &__item-degree {
+        font-size: 18px;
+        color: $grey-text-light;
+        margin-bottom: 5px;
+    }
+
+    &__item-institution {
+        color: $green-text-light;
+    }
+
+    &__item-date {
+        color: $grey-text-light;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
