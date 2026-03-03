@@ -1,29 +1,9 @@
-@font-face {
-    font-family: 'Ubuntu-Mono';
-    src: url('../fonts/UbuntuMono-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Ubuntu-Mono';
-    src: url('../fonts/UbuntuMono-Italic.ttf');
-}
-
-@font-face {
-    font-family: 'Ubuntu-Mono';
-    src: url('../fonts/UbuntuMono-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'Ubuntu-Mono';
-    src: url('../fonts/UbuntuMono-BoldItalic.ttf');
-}
-
-@import "var";
+@import "variables";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .ubuntu-mono-regular {
@@ -40,31 +20,30 @@
   font-style: italic;
 }
 
-
 body {
-    background-color: black;
-    color: $grey-text;
+  background-color: black;
+  color: $grey-text;
 }
 
 .container {
-    max-width: 1440px;
-    display: flex;
-    min-height: calc(100vh - 80px);
-    padding: 40px 20px;
-    margin: 0 auto;
+  max-width: 1440px;
+  display: flex;
+  min-height: calc(100vh - 80px);
+  padding: 40px 20px;
+  margin: 0 auto;
 }
 
 .footer {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .pulse-square {
-    width: 10px;
-    height: 15px;
-    background-color: $green-text-light;
-    margin-left: 25px;
+  width: 10px;
+  height: 15px;
+  background-color: $green-text-light;
+  margin-left: 25px;
 }
 
 @import "window";

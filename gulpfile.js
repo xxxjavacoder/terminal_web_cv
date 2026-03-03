@@ -6,7 +6,6 @@ import cleanCSS from 'gulp-clean-css';
 import autoprefixer from 'gulp-autoprefixer';
 import uglify from 'gulp-uglify';
 import concat from 'gulp-concat';
-import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 import { deleteAsync } from 'del';
 
@@ -16,22 +15,16 @@ const bs = browserSync.create();
 
 const paths = {
   html: 'src/*.html',
-  styles: 'src/scss/**/*.scss',
+  styles: 'src/scss/style.scss',
+  stylesWatch: 'src/scss/**/*.scss',
   scripts: 'src/js/**/*.js',
   images: 'src/images/**/*',
-  fonts: 'dist/fonts',
-  fav: 'dist/favicon',
+  favicon: 'src/favicon/**/*',
   dist: 'dist'
 };
 
 export function clean() {
-  return deleteAsync([
-    `${paths.dist}/**`,
-    `!${paths.fonts}`,
-    `!${paths.fonts}/**`,
-    `!${paths.fav}`,
-    `!${paths.fav}/**`
-  ]);
+  return deleteAsync([`${paths.dist}/**`]);
 }
 
 export function html() {
@@ -45,6 +38,7 @@ export function styles() {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(cleanCSS())
+    .pipe(concat('style.min.css'))
     .pipe(dest(`${paths.dist}/css`))
     .pipe(bs.stream());
 }
@@ -58,9 +52,13 @@ export function scripts() {
 }
 
 export function images() {
-  return src(paths.images)
-    .pipe(imagemin())
+  return src(paths.images, { encoding: false })
     .pipe(dest(`${paths.dist}/images`));
+}
+
+export function favicon() {
+  return src(paths.favicon, { encoding: false })
+    .pipe(dest(`${paths.dist}/favicon`));
 }
 
 export function serve() {
@@ -69,9 +67,10 @@ export function serve() {
   });
 
   watch(paths.html, html);
-  watch(paths.styles, styles);
+  watch(paths.stylesWatch, styles);
   watch(paths.scripts, scripts);
   watch(paths.images, images);
+  watch(paths.favicon, favicon);
 }
 
-export default series(clean, parallel(html, styles, scripts, images), serve);
+export default series(clean, parallel(html, styles, scripts, images, favicon), serve);
